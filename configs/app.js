@@ -4,6 +4,7 @@ import express from "express"
 import morgan from "morgan"
 import helmet from "helmet"
 import cors from "cors"
+import User from '../src/user/user.model.js'
 
 const configs = (app)=>{
     app.use(express.json())
@@ -12,6 +13,8 @@ const configs = (app)=>{
     app.use(helmet())
     app.use(cors())
 }
+
+
 
 const routes = (app)=>{
 
