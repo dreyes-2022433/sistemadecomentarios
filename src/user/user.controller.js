@@ -19,6 +19,22 @@ export const updateUser = async(req, res)=>{
         return res.status(500).send({message: 'General error with updating an user', err})
     }
 }
+//Actualizar Password
+export const updatePassword = async(req, res) =>{
+    try{
+        let {id, newpassword, oldpassword} = req.body
+        let user = await User.findById(id)     
+        if(!user) return res.status(404).send({message: 'user not found'})
+        if(await checkPassword(user.password, oldpassword)){
+            newpassword = await encrypt(newpassword)
+            await User.findByIdAndUpdate(id,{password: newpassword})
+            return res.send({message: 'Contraseña actualizada'})
+        } return res.send({message: 'Contraseña no coincide'}) 
+    }catch(err){
+        console.error(err)
+        return res.status(500).send({message: 'General error'})
+    }
+}
 
 export const adminCreation = async()=>{
     let adminPass = await encrypt('Diego-15.!')
@@ -32,6 +48,7 @@ export const adminCreation = async()=>{
        role: 'ADMIN',
     }
 )
+if(await User.findOne({username: 'dreyes'})) return console.log('Admin already exists')
 admin.save()
 
 }

@@ -19,8 +19,15 @@ const postSchema = Schema(
         mainText : {
             type: String,
             required : [true, 'Main text is required']
-        }
-
+        },
+        status : {
+            type: Boolean,
+            default : true
+        },
+        comments : [{
+            type: Schema.Types.ObjectId,
+            ref : 'Comments'
+        }]
     }
 )
 

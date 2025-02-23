@@ -14,7 +14,11 @@ const commentsSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'Post',
         required: [true,'Post is required']
-    }
+    },
+    status : {
+        type: Boolean,
+        default : true
+    },
 }
 )
 
