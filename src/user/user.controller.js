@@ -1,8 +1,8 @@
 import User from '../user/user.model.js'
-import {encrypt} from '../../utils/encrypt.js'
+import {encrypt, checkPassword} from '../../utils/encrypt.js'
 export const updateUser = async(req, res)=>{
     try{
-        const {id} = req.params
+        const {id} = req.body
         const newdata = req.body
         if(newdata.password){
             return res.send({message: 'cannot update a user password'})

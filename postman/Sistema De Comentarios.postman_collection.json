@@ -1,0 +1,676 @@
+{
+	"info": {
+		"_postman_id": "6ffb1692-bee6-4825-afec-0fe73183ba67",
+		"name": "Sistema De Comentarios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37951877"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "allCategorys",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3630/category/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"category",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "addComments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "Me gusta mas la mazorca",
+									"type": "text"
+								},
+								{
+									"key": "post",
+									"value": "67bbd744ce019896d19a1548",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3630/comment/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"comment",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateComments",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "67bbcb6782d7d8d426054a05",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "si esta chido la verdaad",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3630/comment/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"comment",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteComments",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "67bbcb6782d7d8d426054a05",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3630/comment/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"comment",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "createPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Te gustan las vacas?",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "67bbd708250e17a7a6179e9c",
+									"type": "text"
+								},
+								{
+									"key": "mainText",
+									"value": "Las vacas son bonitas ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3630/post/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyPost",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3630/post/myPost",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"post",
+								"myPost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePost",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "67bbc9f946b4d07dcb85936a",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Vaca",
+									"type": "text"
+								},
+								{
+									"key": "mainText",
+									"value": "Me gusta mas el pollo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3630/post/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"post",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePost",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "67bbc9f946b4d07dcb85936a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3630/post/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"post",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin functions",
+			"item": [
+				{
+					"name": "Allpost",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3630/post/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"post",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Animales",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Categoria orientados a Animales",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3630/category/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"category",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "67bbe05070c9d79c495be321",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Almuerzos",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3630/category/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"category",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "67bbd708250e17a7a6179e9c",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3630/category/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"category",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Dilan",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Rodas",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "drodas",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dreyes@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Drodas-15.!",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "3212-4356",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3630/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"postman.setGlobalVariable(\"token\",data.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userLoggin",
+									"value": "dreyes@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Drodas-15.!",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3630/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "67bbc5b9037e39863e19a955",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "drodass@kinal.edu.gt",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3630/user/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "67bbc5b9037e39863e19a955",
+									"type": "text"
+								},
+								{
+									"key": "newpassword",
+									"value": "Drodas-14.!",
+									"type": "text"
+								},
+								{
+									"key": "oldpassword",
+									"value": "Drodas-15.!",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3630/user/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3630",
+							"path": [
+								"user",
+								"password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
